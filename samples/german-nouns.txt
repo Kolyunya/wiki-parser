@@ -6032,6 +6032,7 @@ Bergepanzer
 Berger
 Bergetappe
 Bergfahrer
+Bergfeld
 Bergfex
 Bergfexin
 Bergfilm
@@ -33761,6 +33762,7 @@ Offizial
 Offizialdelikt
 Offizier
 Offiziersskat
+Offizin
 Offsetantenne
 Offsetdruck
 Offshoretechnik
@@ -34900,6 +34902,7 @@ Parteichefin
 Parteienforscher
 Parteiengesetz
 Parteiensystem
+Parteienverbot
 Parteifreund
 Parteifunktion
 Parteigenosse
@@ -38787,6 +38790,7 @@ Repressalie
 Repression
 Repressionsversuch
 Reprise
+Reprivatisierung
 Reproduktion
 Reproduktionsfotografie
 Reproduktionsorgan
@@ -42873,6 +42877,7 @@ Signallampe
 Signalmast
 Signalsprache
 Signatur
+Signet
 Signifiant
 Signifikant
 Signifikat
@@ -53118,6 +53123,7 @@ Zehnkampf
 Zehnmarkschein
 Zehnt
 Zehntausend
+Zehntausendstel
 Zehntbesitz
 Zehnte
 Zehntel
