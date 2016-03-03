@@ -20,8 +20,15 @@ interface ParserInterface
 
     /**
      * Sets a category to parse
+     * @param $category Category
      */
     public function setCategory(CategoryInterface $category);
+
+    /**
+     * Sets category title to parse
+     * @param $categoryTitle Category title
+     */
+    public function setCategoryTitle($categoryTitle);
 
     /**
      * Adds a filter to the parser

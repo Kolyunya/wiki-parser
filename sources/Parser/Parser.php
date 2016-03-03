@@ -59,6 +59,16 @@ class Parser implements ParserInterface
     public function setCategory(CategoryInterface $category)
     {
         $this->category = $category;
+        $this->categoryTitle = null;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setCategoryTitle($categoryTitle)
+    {
+        $this->categoryTitle = $categoryTitle;
+        $this->category = null;
     }
 
     /**
@@ -111,18 +121,34 @@ class Parser implements ParserInterface
     }
 
     /**
+     * @return string Category's to parse title
+     */
+    private function getCategoryTitle()
+    {
+        $categoryTitle = null;
+        if ($this->category) {
+            $language = $this->language;
+            $categoryTitle = $this->category->getTitle($language);
+        } else {
+            $categoryTitle = $this->categoryTitle;
+        }
+        return $categoryTitle;
+    }
+
+    /**
      * Constructs a category page URL
      * @param string $nextPageToken
      * @return string Next page URL
      */
     private function getPageUrl($nextPageToken)
     {
-        $category = $this->category->getCategoryName($this->language);
+        $language = $this->language;
+        $categoryTitle = $this->category->getTitle($language);
         $pageQuery = http_build_query([
             'format' => 'json',
             'action' => 'query',
             'list' => 'categorymembers',
-            'cmtitle' => $category,
+            'cmtitle' => $categoryTitle,
             'cmtype' => 'page',
             'cmlimit' => 'max',
             'cmcontinue' => $nextPageToken,

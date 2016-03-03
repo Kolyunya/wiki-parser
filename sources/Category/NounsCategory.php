@@ -9,29 +9,31 @@ use Kolyunya\WikiParser\Language\LanguageInterface;
 use Kolyunya\WikiParser\Language\RussianLanguage;
 use Kolyunya\WikiParser\Category\CategoryInterface;
 
-class NounsCategory implements CategoryInterface
+class NounsCategory extends BaseCategory implements CategoryInterface
 {
     /**
-     * @inheritdoc
+     * Constructs a category of nouns.
      */
-    public function getCategoryName(LanguageInterface $language)
+    public function __construct()
     {
-        $categoryName = null;
-        $languageClass = get_class($language);
-        switch ($languageClass) {
-            case get_class(new EnglishLanguage()):
-                $categoryName = 'Category:English_nouns';
-                break;
-            case get_class(new FrenchLanguage()):
-                $categoryName = 'Catégorie:Noms_communs_en_français';
-                break;
-            case get_class(new GermanLanguage()):
-                $categoryName = 'Kategorie:Substantiv_(Deutsch)';
-                break;
-            case get_class(new RussianLanguage()):
-                $categoryName = 'Категория:Русские_существительные';
-                break;
-        }
-        return $categoryName;
+        $this->setTitle(
+            new EnglishLanguage(),
+            'Category:English_nouns'
+        );
+
+        $this->setTitle(
+            new FrenchLanguage(),
+            'Catégorie:Noms_communs_en_français'
+        );
+
+        $this->setTitle(
+            new GermanLanguage(),
+            'Kategorie:Substantiv_(Deutsch)'
+        );
+
+        $this->setTitle(
+            new RussianLanguage(),
+            'Категория:Русские_существительные'
+        );
     }
 }

@@ -11,5 +11,5 @@ interface CategoryInterface
      * @param LanguageInterface $language
      * @return string Name of the category for the corresponding language.
      */
-    public function getCategoryName(LanguageInterface $language);
+    public function getTitle(LanguageInterface $language);
 }
