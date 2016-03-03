@@ -3,6 +3,14 @@
 ## Description
 This parser parses [wiktionary.org](https://www.wiktionary.org/) categories.
 
+## Installation
+This package is [composer-enabled](https://packagist.org/packages/kolyunya/wiktionary-parser). Just require it in your `composer.json`.
+~~~json
+"require": {
+    "kolyunya/wiktionary-parser": "*"
+}
+~~~
+
 ## Usage example
 The following code parses [English nouns](https://en.wiktionary.org/wiki/Category:English_nouns) to a file.
 
