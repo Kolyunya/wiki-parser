@@ -1,0 +1,17 @@
+{
+    "name": "kolyunya/wiki-parser",
+    "authors": [
+        {
+            "name": "Kolyunya",
+            "email": "oleynikovny@mail.ru"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kolyunya\\WikiParser\\": "sources"
+        }
+    }
+}
