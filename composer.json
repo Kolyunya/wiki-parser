@@ -1,9 +1,20 @@
 {
-    "name": "kolyunya/wiki-parser",
+    "name": "kolyunya/wiktionary-parser",
+    "description": "wiktionary.org categories parser",
+    "keywords":
+    [
+        "wiktionary",
+        "dictionary",
+        "parser",
+        "wiki"
+    ],
+    "homepage": "https://github.com/Kolyunya/wiktionary-parser",
+    "license": "GNU GPL v3.0",
     "authors": [
         {
             "name": "Kolyunya",
-            "email": "oleynikovny@mail.ru"
+            "email": "oleynikovny@mail.ru",
+            "homepage": "http://github.com/Kolyunya/"
         }
     ],
     "require-dev": {
