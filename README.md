@@ -37,3 +37,9 @@ $parser->addProcessor($processor);
 // Perform parsing.
 $parser->parse();
 ~~~
+
+## Available filters
+* `WordFilter` - passes words matching the `^\w+$` regular expression pattern.
+* `AlphabetFilter` - passes words containing only alphabetical characters in a corresponding language.
+* `MinimumLengthFilter` - passes words longer than a specified length.
+* `MaximumLengthFilter` - passes words shorter than a specified length.
