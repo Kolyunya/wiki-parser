@@ -49,3 +49,19 @@ $parser->parse();
 * `FileSaver` - saves all words to a specified file.
 * `LowercaseShifter` - converts all words to a lowercase.
 * `UppercaseShifter` - converts all words to an uppercase.
+
+## Custom categories
+The recomended way of implementing custom categories is to extend the `BaseCategory` class. You should use the `setTitle` method in your category class constructor to add titles for specific languages.
+
+~~~php
+class NounsCategory extends BaseCategory implements CategoryInterface
+{
+    public function __construct()
+    {
+        $this->setTitle(new EnglishLanguage(), 'Category:English_nouns');
+        $this->setTitle(new FrenchLanguage(), 'Catégorie:Noms_communs_en_français');
+        $this->setTitle(new GermanLanguage(), 'Kategorie:Substantiv_(Deutsch)');
+        $this->setTitle(new RussianLanguage(), 'Категория:Русские_существительные');
+    }
+}
+~~~
