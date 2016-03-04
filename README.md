@@ -47,6 +47,7 @@ $parser->parse();
 ## Available processors
 * `StdoutPrinter` - prints all words to the `stdout`.
 * `FileSaver` - saves all words to a specified file.
+* `DatabaseSaver` - saves all words to a database.
 * `LowercaseShifter` - converts all words to a lowercase.
 * `UppercaseShifter` - converts all words to an uppercase.
 
