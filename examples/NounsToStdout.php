@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 
 use Kolyunya\WikiParser\Category\NounsCategory;
 use Kolyunya\WikiParser\Filter\AlphabetFilter;
+use Kolyunya\WikiParser\Filter\MinimumLengthFilter;
 use Kolyunya\WikiParser\Language\LanguageFactory;
 use Kolyunya\WikiParser\Parser\Parser;
 use Kolyunya\WikiParser\Processor\StdoutPrinter;
@@ -21,9 +22,13 @@ $parser->setLanguage($language);
 $category = new NounsCategory();
 $parser->setCategory($category);
 
-// Create a filter which will filter out all non-word items.
-$filter = new AlphabetFilter();
-$parser->addFilter($filter);
+// Add a filter which will filter out all non-word items.
+$alphabetFilter = new AlphabetFilter();
+$parser->addFilter($alphabetFilter);
+
+// Add a filter which will filter out all one-letter words.
+$minimumLengthFilter = new MinimumLengthFilter();
+$parser->addFilter($minimumLengthFilter);
 
 // Create a processor which will print all filtered items to an stdout
 $processor = new StdoutPrinter();
