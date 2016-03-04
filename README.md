@@ -69,3 +69,28 @@ class NounsCategory extends BaseCategory implements CategoryInterface
     }
 }
 ~~~
+
+## Custom processors
+If you need to implement a custom processor you have two options.
+
+First, you can implement the `ProcessorInterface` which is quite straightforward.
+~~~php
+class StdoutPrinter implements ProcessorInterface
+{
+    public function process(LanguageInterface $language, &$item)
+    {
+        $data = "$item\n";
+        echo $data;
+    }
+}
+~~~
+
+Second, you can use a `CustomProcessor` which should be provided with a callback function which will do something.
+~~~php
+$stdoutPrinter = new CustomProcessor(
+    function (LanguageInterface $language, &$item) {
+        $data = "$item\n";
+        echo $data;
+    }
+);
+~~~
