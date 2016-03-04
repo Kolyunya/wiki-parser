@@ -43,3 +43,9 @@ $parser->parse();
 * `AlphabetFilter` - passes words containing only alphabetical characters in a corresponding language.
 * `MinimumLengthFilter` - passes words longer than a specified length.
 * `MaximumLengthFilter` - passes words shorter than a specified length.
+
+## Available processors
+* `StdoutPrinter` - prints all words to the `stdout`.
+* `FileSaver` - saves all words to a specified file.
+* `LowercaseShifter` - converts all words to a lowercase.
+* `UppercaseShifter` - converts all words to an uppercase.
