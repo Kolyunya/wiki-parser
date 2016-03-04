@@ -86,6 +86,7 @@ class FilterStation implements FilterStationInterface
         while (true) {
             $filterId = $this->filterId + 1;
             if (!$this->hasFilter($filterId)) {
+                $this->filterId = $filterId;
                 break;
             }
         }
