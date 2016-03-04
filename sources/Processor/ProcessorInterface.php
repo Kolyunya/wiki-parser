@@ -11,5 +11,5 @@ interface ProcessorInterface
      * @param LanguageInterface $language
      * @param string $item
      */
-    public function process(LanguageInterface $language, $item);
+    public function process(LanguageInterface $language, &$item);
 }

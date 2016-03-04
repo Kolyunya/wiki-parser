@@ -27,7 +27,7 @@ class FileSaver implements ProcessorInterface
     /**
      * @inheritdoc
      */
-    public function process(LanguageInterface $language, $item)
+    public function process(LanguageInterface $language, &$item)
     {
         $fileName = $this->getFileName($language);
         $data = "$item\n";

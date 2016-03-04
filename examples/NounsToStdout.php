@@ -7,6 +7,7 @@ use Kolyunya\WikiParser\Filter\AlphabetFilter;
 use Kolyunya\WikiParser\Filter\MinimumLengthFilter;
 use Kolyunya\WikiParser\Language\LanguageFactory;
 use Kolyunya\WikiParser\Parser\Parser;
+use Kolyunya\WikiParser\Processor\LowercaseShifter;
 use Kolyunya\WikiParser\Processor\StdoutPrinter;
 
 // Construct a parser instance
@@ -30,9 +31,13 @@ $parser->addFilter($alphabetFilter);
 $minimumLengthFilter = new MinimumLengthFilter();
 $parser->addFilter($minimumLengthFilter);
 
-// Create a processor which will print all filtered items to an stdout
-$processor = new StdoutPrinter();
-$parser->addProcessor($processor);
+// Add a processor which will shift all words to lowercase.
+$lowercaseShifter = new LowercaseShifter();
+$parser->addProcessor($lowercaseShifter);
+
+// Add a processor which will print all filtered items to an stdout
+$stdoutPrinter = new StdoutPrinter();
+$parser->addProcessor($stdoutPrinter);
 
 // Perform parsing
 $parser->parse();
