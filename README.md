@@ -50,6 +50,9 @@ $parser->parse();
 * `LowercaseShifter` - converts all words to a lowercase.
 * `UppercaseShifter` - converts all words to an uppercase.
 
+## Adding languages
+To add an arbitrary language you should implement the `LanguageInterface`. It contains only to methods. The `getCode` method must return the standard language code (e.g. `en` for English). The `getAlphabet` method must return an array of letters in language alphabet.
+
 ## Custom categories
 The recomended way of implementing custom categories is to extend the `BaseCategory` class. You should use the `setTitle` method in your category class constructor to add titles for specific languages.
 
