@@ -1,13 +1,13 @@
 # Wiktionary parser
 
 ## Description
-This parser parses [wiktionary.org](https://www.wiktionary.org/) categories.
+This parser parses [MediaWiki](https://www.mediawiki.org) categories.
 
 ## Installation
-This package is [composer-enabled](https://packagist.org/packages/kolyunya/wiktionary-parser). Just require it in your `composer.json`.
+This package is [composer-enabled](https://packagist.org/packages/kolyunya/wiki-parser). Just require it in your `composer.json`.
 ~~~json
 "require": {
-    "kolyunya/wiktionary-parser": "*"
+    "kolyunya/wiki-parser": "*"
 }
 ~~~
 
