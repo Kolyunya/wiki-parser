@@ -2,19 +2,16 @@
 
 namespace Kolyunya\WikiParser\Host;
 
-use Kolyunya\WikiParser\Host\HostInterface;
-use Kolyunya\WikiParser\Language\LanguageInterface;
+use Kolyunya\WikiParser\Host\BaseHost;
 
-class Wikipedia implements HostInterface
+class Wikipedia extends BaseHost
 {
     /**
      * @inheritdoc
      */
-    public function getApiUrl(LanguageInterface $language)
+    protected function getDomain()
     {
-        $languageCode = $language->getCode();
-        $apiUrl = "https://$languageCode.wikipedia.org/w/api.php";
-        return $apiUrl;
+        $domain = 'wikipedia.org';
+        return $domain;
     }
 }
-

@@ -2,19 +2,17 @@
 
 namespace Kolyunya\WikiParser\Host;
 
-use Kolyunya\WikiParser\Host\HostInterface;
-use Kolyunya\WikiParser\Language\LanguageInterface;
+use Kolyunya\WikiParser\Host\BaseHost;
 
-class Wiktionary implements HostInterface
+class Wiktionary extends BaseHost
 {
     /**
      * @inheritdoc
      */
-    public function getApiUrl(LanguageInterface $language)
+    protected function getDomain()
     {
-        $languageCode = $language->getCode();
-        $apiUrl = "https://$languageCode.wiktionary.org/w/api.php";
-        return $apiUrl;
+        $domain = 'wiktionary.org';
+        return $domain;
     }
 }
 
