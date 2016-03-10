@@ -4,6 +4,7 @@ namespace Kolyunya\WikiParser\Parser;
 
 use Kolyunya\WikiParser\Category\CategoryInterface;
 use Kolyunya\WikiParser\Filter\FilterInterface;
+use Kolyunya\WikiParser\Host\HostInterface;
 use Kolyunya\WikiParser\Language\LanguageInterface;
 use Kolyunya\WikiParser\Processor\ProcessorInterface;
 
@@ -15,12 +16,13 @@ interface ParserInterface
 {
     /**
      * Sets a language to parse
+     * @param LanguageInterface $language
      */
     public function setLanguage(LanguageInterface $language);
 
     /**
      * Sets a category to parse
-     * @param $category Category
+     * @param CategoryInterface $category
      */
     public function setCategory(CategoryInterface $category);
 
