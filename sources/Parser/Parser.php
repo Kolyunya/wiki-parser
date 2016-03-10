@@ -59,16 +59,6 @@ class Parser implements ParserInterface
     public function setCategory(CategoryInterface $category)
     {
         $this->category = $category;
-        $this->categoryTitle = null;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function setCategoryTitle($categoryTitle)
-    {
-        $this->categoryTitle = $categoryTitle;
-        $this->category = null;
     }
 
     /**
@@ -118,21 +108,6 @@ class Parser implements ParserInterface
         $languageCode = $this->language->getCode();
         $apiResource = "https://$languageCode.wiktionary.org/w/api.php";
         return $apiResource;
-    }
-
-    /**
-     * @return string Category's to parse title
-     */
-    private function getCategoryTitle()
-    {
-        $categoryTitle = null;
-        if ($this->category) {
-            $language = $this->language;
-            $categoryTitle = $this->category->getTitle($language);
-        } else {
-            $categoryTitle = $this->categoryTitle;
-        }
-        return $categoryTitle;
     }
 
     /**
