@@ -1,14 +1,14 @@
 {
-    "name": "kolyunya/wiktionary-parser",
-    "description": "wiktionary.org categories parser",
+    "name": "kolyunya/wiki-parser",
+    "description": "MediaWiki categories parser",
     "keywords":
     [
-        "wiktionary",
-        "dictionary",
-        "parser",
-        "wiki"
+        "media-wiki",
+        "wikipedia",
+        "wiki",
+        "parser"
     ],
-    "homepage": "https://github.com/Kolyunya/wiktionary-parser",
+    "homepage": "https://github.com/Kolyunya/wiki-parser",
     "license": "GNU GPL v3.0",
     "authors": [
         {
