@@ -15,6 +15,12 @@ use Kolyunya\WikiParser\Processor\ProcessorInterface;
 interface ParserInterface
 {
     /**
+     * Sets a host to parse from
+     * @param HostInterface $host
+     */
+    public function setHost(HostInterface $host);
+
+    /**
      * Sets a language to parse
      * @param LanguageInterface $language
      */

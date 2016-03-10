@@ -6,12 +6,19 @@ use Kolyunya\WikiParser\Category\CategoryInterface;
 use Kolyunya\WikiParser\Filter\FilterInterface;
 use Kolyunya\WikiParser\Filter\FilterStationInterface;
 use Kolyunya\WikiParser\Filter\FilterStation;
+use Kolyunya\WikiParser\Host\HostInterface;
 use Kolyunya\WikiParser\Language\LanguageInterface;
 use Kolyunya\WikiParser\Parser\ParserInterface;
 use Kolyunya\WikiParser\Processor\ProcessorInterface;
 
 class Parser implements ParserInterface
 {
+    /**
+     * Host to parse from
+     * @var HostInterface
+     */
+    private $host;
+
     /**
      * Language to be parsed
      * @var LanguageInterface
@@ -43,6 +50,14 @@ class Parser implements ParserInterface
     {
         $this->filterStation = new FilterStation();
         $this->processors = array();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setHost(HostInterface $host)
+    {
+        $this->host = $host;
     }
 
     /**
@@ -101,16 +116,6 @@ class Parser implements ParserInterface
     }
 
     /**
-     * @return string Category resource URL
-     */
-    private function getApiResource()
-    {
-        $languageCode = $this->language->getCode();
-        $apiResource = "https://$languageCode.wiktionary.org/w/api.php";
-        return $apiResource;
-    }
-
-    /**
      * Constructs a category page URL
      * @param string $nextPageToken
      * @return string Next page URL
@@ -119,7 +124,7 @@ class Parser implements ParserInterface
     {
         $language = $this->language;
         $categoryTitle = $this->category->getTitle($language);
-        $pageQuery = http_build_query([
+        $requestQuery = http_build_query([
             'format' => 'json',
             'action' => 'query',
             'list' => 'categorymembers',
@@ -128,9 +133,9 @@ class Parser implements ParserInterface
             'cmlimit' => 'max',
             'cmcontinue' => $nextPageToken,
         ]);
-        $apiResource = $this->getApiResource();
-        $pageUrl = "$apiResource?$pageQuery";
-        return $pageUrl;
+        $apiUrl = $this->host->getApiUrl($this->language);
+        $requestUrl = "$apiUrl?$requestQuery";
+        return $requestUrl;
     }
 
     /**
