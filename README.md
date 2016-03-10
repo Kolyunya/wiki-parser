@@ -18,6 +18,10 @@ The following code parses [English nouns](https://en.wiktionary.org/wiki/Categor
 // Create a parser instance.
 $parser = new Parser();
 
+// Set host to wiktionary
+$host = new Wiktionary();
+$parser->setHost($host);
+
 // Set language to English.
 $language = new EnglishLanguage();
 $parser->setLanguage($language);
